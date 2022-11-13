@@ -1,0 +1,11 @@
+C:\Users\user\OneDrive\Masaüstü\Projeler\csharp\EmployeeRecordSystem\EmployeeRecordSystem\bin\Debug\EmployeeRecordSystem.exe.config
+C:\Users\user\OneDrive\Masaüstü\Projeler\csharp\EmployeeRecordSystem\EmployeeRecordSystem\bin\Debug\EmployeeRecordSystem.exe
+C:\Users\user\OneDrive\Masaüstü\Projeler\csharp\EmployeeRecordSystem\EmployeeRecordSystem\bin\Debug\EmployeeRecordSystem.pdb
+C:\Users\user\OneDrive\Masaüstü\Projeler\csharp\EmployeeRecordSystem\EmployeeRecordSystem\obj\Debug\EmployeeRecordSystem.csproj.AssemblyReference.cache
+C:\Users\user\OneDrive\Masaüstü\Projeler\csharp\EmployeeRecordSystem\EmployeeRecordSystem\obj\Debug\EmployeeRecordSystem.csproj.SuggestedBindingRedirects.cache
+C:\Users\user\OneDrive\Masaüstü\Projeler\csharp\EmployeeRecordSystem\EmployeeRecordSystem\obj\Debug\EmployeeRecordSystem.Form1.resources
+C:\Users\user\OneDrive\Masaüstü\Projeler\csharp\EmployeeRecordSystem\EmployeeRecordSystem\obj\Debug\EmployeeRecordSystem.Properties.Resources.resources
+C:\Users\user\OneDrive\Masaüstü\Projeler\csharp\EmployeeRecordSystem\EmployeeRecordSystem\obj\Debug\EmployeeRecordSystem.csproj.GenerateResource.cache
+C:\Users\user\OneDrive\Masaüstü\Projeler\csharp\EmployeeRecordSystem\EmployeeRecordSystem\obj\Debug\EmployeeRecordSystem.csproj.CoreCompileInputs.cache
+C:\Users\user\OneDrive\Masaüstü\Projeler\csharp\EmployeeRecordSystem\EmployeeRecordSystem\obj\Debug\EmployeeRecordSystem.exe
+C:\Users\user\OneDrive\Masaüstü\Projeler\csharp\EmployeeRecordSystem\EmployeeRecordSystem\obj\Debug\EmployeeRecordSystem.pdb
