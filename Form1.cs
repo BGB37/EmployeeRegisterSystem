@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Threading;
 
 namespace EmployeeRecordSystem
 {
@@ -17,7 +18,7 @@ namespace EmployeeRecordSystem
         {
             InitializeComponent();
         }
-
+       
         SqlConnection conn = new SqlConnection("Data Source=BGB-PC\\SQLEXPRESS;Initial Catalog=PersonelKayıt;Integrated Security=True");
         private void lblCity_Click(object sender, EventArgs e)
         {
@@ -28,12 +29,25 @@ namespace EmployeeRecordSystem
         {
             // TODO: This line of code loads data into the 'personelKayıtDataSet.PersonalRegister' table. You can move, or remove it, as needed.
             this.personalRegisterTableAdapter.Fill(this.personelKayıtDataSet.PersonalRegister);
+            if(txtID.Text == "")
+            {
+                //txtID.ForeColor = Color.Gray;
+                //txtID.Text = "Type id here.";   
+            }
 
         }
 
         private void btnList_Click(object sender, EventArgs e)
         {
             this.personalRegisterTableAdapter.Fill(this.personelKayıtDataSet.PersonalRegister);
+            SqlConnection cnn = new SqlConnection("Data Source=BGB-PC\\SQLEXPRESS;Initial Catalog=PersonelKayıt;Integrated Security=True");
+            cnn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM dbo.PersonalRegister;", cnn);
+            cmd.ExecuteNonQuery();
+            int numberOfRecordedEmployees = (int)cmd.ExecuteScalar();
+            this.lblNumOfRecordedEmployees.Text = "Number of Currently Recorded Employees: " + Convert.ToString(numberOfRecordedEmployees);
+            cnn.Close();
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -54,6 +68,14 @@ namespace EmployeeRecordSystem
                 command.Parameters.AddWithValue("@p5", comboBoxCity.Text);
                 command.Parameters.AddWithValue("@p6", maskedtxtSalary.Text);
                 command.Parameters.AddWithValue("@p7", txtProfession.Text);
+                
+                if(rdMarried.Checked)
+                {
+                    lblMarriedOrNot.Text = "Married";
+                } else
+                {
+                    lblMarriedOrNot.Text = "Single";
+                }
                 command.Parameters.AddWithValue("@p8", lblMarriedOrNot.Text);
                 //command.Parameters.AddWithValue("@p8",txtID.Text);
                 command.ExecuteNonQuery();
@@ -159,5 +181,58 @@ namespace EmployeeRecordSystem
                 rdSingle.Checked = true;
             }
         }
+
+        private void btnList_MouseEnter(object sender, EventArgs e)
+        {
+            btnList.BackColor = Color.FromArgb(200,200, 200); 
+        }
+
+        private void btnList_MouseLeave(object sender, EventArgs e)
+        {
+            btnList.BackColor = Color.WhiteSmoke;
+        }
+
+        private void btnSave_MouseEnter(object sender, EventArgs e)
+        {
+            btnSave.BackColor = Color.FromArgb(200, 200, 200);
+        }
+
+        private void btnSave_MouseLeave(object sender, EventArgs e)
+        {
+            btnSave.BackColor = Color.WhiteSmoke;
+        }
+
+
+        private void btnDelete_MouseEnter(object sender, EventArgs e)
+        {
+            btnDelete.BackColor = Color.FromArgb(200, 200, 200);
+        }
+
+        private void btnDelete_MouseLeave(object sender, EventArgs e)
+        {
+            btnDelete.BackColor = Color.WhiteSmoke;
+        }
+
+        private void btnUpdate_MouseEnter(object sender, EventArgs e)
+        {
+            btnUpdate.BackColor = Color.FromArgb(200, 200, 200);
+        }
+
+        private void btnUpdate_MouseLeave(object sender, EventArgs e)
+        {
+            btnUpdate.BackColor = Color.WhiteSmoke;
+        }
+
+        private void btnClear_MouseEnter(object sender, EventArgs e)
+        {
+            btnClear.BackColor = Color.FromArgb(200, 200, 200);
+        }
+
+        private void btnClear_MouseLeave(object sender, EventArgs e)
+        {
+            btnClear.BackColor = Color.WhiteSmoke;
+        }
+
+        
     }
 }
