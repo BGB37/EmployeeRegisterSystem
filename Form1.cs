@@ -53,6 +53,22 @@ namespace EmployeeRecordSystem
         private void btnSave_Click(object sender, EventArgs e)
         {
 
+            // NEW DEVELOPMENT STARTS HERE 11.12.2022
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT MAX (EmployeeId) FROM PersonalRegister;", conn);
+            int lastValue = (int) cmd.ExecuteScalar();
+            conn.Close();
+
+            if (txtID.Text == "")
+            {
+                txtID.Text = Convert.ToString(++lastValue);
+            }
+            else if (Convert.ToInt32(txtID.Text) > lastValue || Convert.ToInt32(txtID.Text) < lastValue || Convert.ToInt32(txtID.Text) == lastValue) {
+                txtID.Text = Convert.ToString(++lastValue);
+                MessageBox.Show($"The ID that you entered is invalid. ID value set to {lastValue} for you.");   
+            }
+            // NEW DEVELOPMENT ENDS HERE 11.12.2022
+
             if (txtFirstName.Text == "")
             {
                 MessageBox.Show("You must enter a name.");
